@@ -1,0 +1,282 @@
+/* ===============================
+   DOMAIN AWAKENING - STYLE.CSS
+================================ */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+overflow:hidden;
+background:#000;
+color:white;
+height:100vh;
+}
+
+/* ================= Loading ================= */
+
+#loading{
+position:absolute;
+inset:0;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:black;
+z-index:100;
+}
+
+#loading h1{
+font-size:60px;
+letter-spacing:5px;
+color:#66d9ff;
+text-shadow:0 0 25px cyan;
+}
+
+#loading p{
+margin-top:15px;
+font-size:20px;
+color:#ddd;
+}
+
+.loader{
+margin-top:40px;
+width:80px;
+height:80px;
+border:6px solid rgba(255,255,255,.2);
+border-top:6px solid cyan;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+to{
+transform:rotate(360deg);
+}
+}
+
+/* ================= Menu ================= */
+
+#menu{
+position:absolute;
+inset:0;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:
+radial-gradient(circle at center,#111,#000);
+transition:.8s;
+}
+
+.hidden{
+display:none;
+}
+
+.title{
+font-size:65px;
+text-shadow:0 0 30px cyan;
+}
+
+.subtitle{
+margin-top:15px;
+font-size:22px;
+color:#ddd;
+}
+
+.buttons{
+display:flex;
+gap:35px;
+margin-top:60px;
+}
+
+button{
+padding:18px 42px;
+font-size:20px;
+font-weight:bold;
+border:none;
+border-radius:50px;
+cursor:pointer;
+transition:.35s;
+color:white;
+}
+
+#blueBtn{
+background:#008cff;
+box-shadow:0 0 25px #00c8ff;
+}
+
+#blueBtn:hover{
+transform:scale(1.1);
+box-shadow:0 0 50px cyan;
+}
+
+#redBtn{
+background:#c40000;
+box-shadow:0 0 25px red;
+}
+
+#redBtn:hover{
+transform:scale(1.1);
+box-shadow:0 0 50px red;
+}
+
+/* ================= Domain Screen ================= */
+
+#domainScreen{
+position:absolute;
+inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:black;
+overflow:hidden;
+}
+
+#domainTitle{
+font-size:70px;
+z-index:10;
+letter-spacing:4px;
+text-transform:uppercase;
+}
+
+#quote{
+margin-top:20px;
+font-size:28px;
+text-align:center;
+max-width:700px;
+color:white;
+opacity:0;
+transition:1s;
+z-index:10;
+}
+
+#replay{
+margin-top:45px;
+background:white;
+color:black;
+display:none;
+}
+
+/* ================= Flash ================= */
+
+#flash{
+position:absolute;
+inset:0;
+background:white;
+opacity:0;
+pointer-events:none;
+}
+
+/* ================= Fog ================= */
+
+#fog{
+position:absolute;
+inset:-20%;
+background:
+radial-gradient(circle,rgba(255,255,255,.08),transparent 70%);
+filter:blur(60px);
+animation:fogMove 18s linear infinite;
+}
+
+@keyframes fogMove{
+
+0%{
+transform:translate(-5%,-5%);
+}
+
+50%{
+transform:translate(5%,5%);
+}
+
+100%{
+transform:translate(-5%,-5%);
+}
+
+}
+
+/* ================= Energy Rings ================= */
+
+#rings{
+position:absolute;
+width:300px;
+height:300px;
+border-radius:50%;
+border:3px solid cyan;
+box-shadow:0 0 40px cyan;
+animation:ring 3s infinite;
+opacity:.35;
+}
+
+@keyframes ring{
+
+0%{
+transform:scale(.2);
+opacity:1;
+}
+
+100%{
+transform:scale(5);
+opacity:0;
+}
+
+}
+
+/* ================= Lightning ================= */
+
+#lightning{
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+transparent,
+rgba(255,255,255,.8),
+transparent);
+opacity:0;
+}
+
+/* ================= Particles ================= */
+
+#particles{
+position:absolute;
+inset:0;
+overflow:hidden;
+}
+
+/* ================= Responsive ================= */
+
+@media(max-width:700px){
+
+.title{
+font-size:42px;
+}
+
+#domainTitle{
+font-size:42px;
+text-align:center;
+}
+
+.subtitle{
+font-size:18px;
+text-align:center;
+padding:0 20px;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+button{
+width:260px;
+}
+
+#quote{
+font-size:20px;
+padding:0 20px;
+}
+
+}
